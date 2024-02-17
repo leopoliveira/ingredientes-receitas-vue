@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const listaCategorias = ['Carnes', 'Vegetais', 'Laticínios', 'Grãos', 'Frutas', 'Temperos'];
+import { obterCategorias } from '../data/receitas';
+
+const listaCategorias = obterCategorias();
 </script>
 
 <template>
@@ -12,7 +14,7 @@ const listaCategorias = ['Carnes', 'Vegetais', 'Laticínios', 'Grãos', 'Frutas'
     <ul class="categorias">
       <li
         v-for="(categoria, index) in listaCategorias"
-        :key="index">{{ categoria }}</li>
+        :key="index">{{ categoria.nome }}</li>
     </ul>
     <p class="paragrafo dica">
       *Atenção: consideramos que você tem em casa sal, pimenta e água.
