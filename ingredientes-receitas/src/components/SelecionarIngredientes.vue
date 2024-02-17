@@ -1,8 +1,19 @@
 <script setup lang="ts">
 import type { Categoria } from "../interfaces/Categoria";
 import { obterCategorias } from "../data/receitas";
+</script>
 
-const listaCategorias: Categoria[] = obterCategorias();
+<script lang="ts">
+export default {
+  data() {
+    return {
+      listaCategorias: [] as Categoria[],
+    };
+  },
+  async created() {
+    this.listaCategorias = await obterCategorias();
+  },
+};
 </script>
 
 <template>
