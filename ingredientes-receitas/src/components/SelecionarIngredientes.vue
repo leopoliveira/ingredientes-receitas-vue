@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { Categoria } from '../interfaces/Categoria';
-import { obterCategorias } from '../data/receitas';
+import type { Categoria } from "../interfaces/Categoria";
+import { obterCategorias } from "../data/receitas";
 
-const listaCategorias:Categoria[] = obterCategorias();
+const listaCategorias: Categoria[] = obterCategorias();
 </script>
 
 <template>
@@ -15,7 +15,9 @@ const listaCategorias:Categoria[] = obterCategorias();
     <ul class="categorias">
       <li
         v-for="(categoria, index) in listaCategorias"
-        :key="index">{{ categoria.nome }}</li>
+        :key="index">
+        {{ categoria.nome }}
+      </li>
     </ul>
     <p class="paragrafo dica">
       *Atenção: consideramos que você tem em casa sal, pimenta e água.
