@@ -1,7 +1,18 @@
-<script setup lang="ts">
-import SelecionarIngredientes from './SelecionarIngredientes.vue';
+<script lang="ts">
+import SelecionarIngredientes from "./SelecionarIngredientes.vue";
 
 const ingredientes = ["Alho", "Manteira", "Orégano", "Tomate"];
+
+export default {
+  data() {
+    return {
+      ingredientes,
+    };
+  },
+  components: {
+    SelecionarIngredientes,
+  },
+};
 </script>
 
 <template>
