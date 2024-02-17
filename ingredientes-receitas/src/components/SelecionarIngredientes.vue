@@ -1,9 +1,7 @@
-<script setup lang="ts">
+<script lang="ts">
 import type { Categoria } from "../interfaces/Categoria";
 import { obterCategorias } from "../data/receitas";
-</script>
 
-<script lang="ts">
 export default {
   data() {
     return {
