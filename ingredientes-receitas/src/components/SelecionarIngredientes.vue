@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { Categoria } from '../interfaces/Categoria';
 import { obterCategorias } from '../data/receitas';
 
-const listaCategorias = obterCategorias();
+const listaCategorias:Categoria[] = obterCategorias();
 </script>
 
 <template>
