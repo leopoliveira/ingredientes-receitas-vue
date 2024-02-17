@@ -3,8 +3,8 @@ import type { Categoria } from "../interfaces/Categoria"
 export function obterCategorias():Categoria[] {
   return [
   {
-    nome: "Laticínios e Ovos",
-    ingredientes: [
+    "nome": "Laticínios e Ovos",
+    "ingredientes": [
       "Ovos",
       "Queijo",
       "Leite",
@@ -12,13 +12,13 @@ export function obterCategorias():Categoria[] {
       "Creme de Leite",
       "Iogurte",
       "Leite Condensado",
-      "Sorvete",
+      "Sorvete"
     ],
-    rotulo: "laticinios_e_ovos",
+    "imagem": "laticinios_e_ovos.png"
   },
   {
-    nome: "Farinhas e Fermentos",
-    ingredientes: [
+    "nome": "Farinhas e Fermentos",
+    "ingredientes": [
       "Farinha de trigo",
       "Polvilho",
       "Farinha de rosca",
@@ -26,10 +26,156 @@ export function obterCategorias():Categoria[] {
       "Farinha de mandioca",
       "Fubá",
       "Linhaça",
-      "Fermento químico",
+      "Fermento químico"
     ],
-    rotulo: "farinhas_e_fermentos",
+    "imagem": "farinhas_e_fermentos.png"
   },
+  {
+    "nome": "Temperos e Especiarias",
+    "ingredientes": [
+      "Canela",
+      "Cravo",
+      "Orégano",
+      "Noz moscada",
+      "Tomilho",
+      "Pimenta do Reino",
+      "Cominho"
+    ],
+    "imagem": "temperos_e_especiarias.png"
+  },
+  {
+    "nome": "Óleos, Gorduras e Vinagres",
+    "ingredientes": [
+      "Vinagre",
+      "Óleo",
+      "Dendê",
+      "Azeite de Oliva",
+      "Banha",
+      "Aceto Balsâmico",
+      "Óleo de coco"
+    ],
+    "imagem": "oleos_gorduras_e_vinagres.png"
+  },
+  {
+    "nome": "Hortaliças e Verduras",
+    "ingredientes": [
+      "Cebola",
+      "Alho",
+      "Tomate",
+      "Abóbora",
+      "Abobrinha",
+      "Batata",
+      "Pimentão",
+      "Espinafre",
+      "Cenoura"
+    ],
+    "imagem": "hortalicas_e_verduras.png"
+  },
+  {
+    "nome": "Açúcares e Adoçantes",
+    "ingredientes": [
+      "Açúcar branco",
+      "Açúcar mascavo",
+      "Açúcar cristal",
+      "Melado",
+      "Mel",
+      "Baunilha",
+      "Glucose",
+      "Xilito",
+      "Stevia"
+    ],
+    "imagem": "acucares_e_adocantes.png"
+  },
+  {
+    "nome": "Proteínas Animais",
+    "ingredientes": [
+      "Peixe",
+      "Carne bovina",
+      "Carne de porco",
+      "Frango",
+      "Bacon",
+      "Salsicha",
+      "Atum",
+      "Salmão",
+      "Presunto",
+      "Bacalhau"
+    ],
+    "imagem": "proteinas_animais.png"
+  },
+  {
+    "nome": "Grãos, Cereais e Leguminosas",
+    "ingredientes": [
+      "Arroz",
+      "Feijão",
+      "Aveia",
+      "Ervilha",
+      "Lentilha",
+      "Grão de bico",
+      "Milho",
+      "Gergelim",
+      "Quinoa"
+    ],
+    "imagem": "graos_cerais_e_leguminosas.png"
+  },
+  {
+    "nome": "Frutas frescas",
+    "ingredientes": [
+      "Banana",
+      "Maçã",
+      "Uva",
+      "Pera",
+      "Limão",
+      "Morango",
+      "Ameixa",
+      "Framboesa",
+      "Acabaxi"
+    ],
+    "imagem": "frutas_frescas.png"
+  },
+  {
+    "nome": "Frutas secas",
+    "ingredientes": [
+      "Castanha de caju",
+      "Castanha do pará",
+      "Uva passa",
+      "Damasco",
+      "Tâmara",
+      "Pistache",
+      "Amêndoa",
+      "Amendoim"
+    ],
+    "imagem": "frutas_secas.png"
+  },
+  {
+    "nome": "Pães e Massas",
+    "ingredientes": [
+      "Pão",
+      "Pão sírio",
+      "Tortilha",
+      "Macarrão",
+      "Nhoque",
+      "Massa de pastel",
+      "Massa de lasanha",
+      "Biscoito",
+      "Broa"
+    ],
+    "imagem": "paes_e_massas.png"
+  },
+  {
+    "nome": "Doces e guloseimas",
+    "ingredientes": [
+      "Chocolate",
+      "Geleia",
+      "Goiabada",
+      "Caramelo",
+      "Chantilly",
+      "Cacau em pó",
+      "Suspiro",
+      "Gelatina",
+      "Paçoca"
+    ],
+    "imagem": "doces_e_guloseimas.png"
+  }
 ];
 }
 
