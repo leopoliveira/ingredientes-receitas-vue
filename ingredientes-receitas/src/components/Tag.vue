@@ -5,12 +5,16 @@ export default {
       type: String,
       required: true,
     },
+    ativa: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
 
 <template>
-  <span class="tag">{{ texto }}</span>
+  <span :class="['tag', { ativa }]">{{ texto }}</span>
 </template>
 
 <style scoped>
@@ -21,6 +25,12 @@ export default {
   padding: 0.5rem;
   text-align: center;
   transition: 0.2s;
+  color: var(--cinza);
+  background: var(--cinza-claro);
+  font-weight: 400;
+}
+
+.tag.ativa {
   color: var(--creme, #fffaf3);
   background: var(--coral, #f0633c);
   font-weight: 700;
