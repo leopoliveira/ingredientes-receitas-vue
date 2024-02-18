@@ -13,9 +13,26 @@ export default {
 </script>
 
 <template>
-  {{ categoria.nome }}
-  {{ categoria.ingredientes }}
-  {{ categoria.imagem }}
+  <article class="categoria">
+    <header class="categoria__cabecalho">
+      <img
+        :src="`/imagens/icones/categorias_ingredientes/${categoria.imagem}`"
+        :alt="categoria.nome"
+        class="categoria__imagem" />
+
+      <h2 class="paragrafo-lg categoria__nome">
+        {{ categoria.nome }}
+      </h2>
+    </header>
+
+    <ul class="categoria__ingredientes">
+      <li
+        v-for="(ingrediente, index) in categoria.ingredientes"
+        :key="index">
+        {{ ingrediente }}
+      </li>
+    </ul>
+  </article>
 </template>
 
 <style scoped>
