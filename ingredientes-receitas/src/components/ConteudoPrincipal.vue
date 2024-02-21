@@ -2,23 +2,20 @@
 import SelecionarIngredientes from "./SelecionarIngredientes.vue";
 import SuaLista from "./SuaLista.vue";
 
-const ingredientes = [
-  "Alho",
-  "Manteira",
-  "Orégano",
-  "Tomate",
-  "Manjericão",
-];
-
 export default {
   data() {
     return {
-      ingredientes,
+      ingredientes: [] as string[],
     };
   },
   components: {
     SelecionarIngredientes,
     SuaLista,
+  },
+  methods: {
+    adicionarIngredientes(ingrediente: string) {
+      this.ingredientes.push(ingrediente);
+    },
   },
 };
 </script>
@@ -26,7 +23,8 @@ export default {
 <template>
   <main class="conteudo-principal">
     <SuaLista :ingredientes="ingredientes" />
-    <SelecionarIngredientes />
+    <SelecionarIngredientes
+      @adicionar-ingrediente="adicionarIngredientes($event)" />
   </main>
 </template>
 

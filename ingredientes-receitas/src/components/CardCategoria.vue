@@ -13,6 +13,7 @@ export default {
   components: {
     IngredienteSelecionado,
   },
+  emits: ["adicionarIngrediente"],
 };
 </script>
 
@@ -33,7 +34,11 @@ export default {
       <li
         v-for="(ingrediente, index) in categoria.ingredientes"
         :key="index">
-        <IngredienteSelecionado :ingrediente="ingrediente" />
+        <IngredienteSelecionado
+          :ingrediente="ingrediente"
+          @adicionar-ingrediente="
+            $emit('adicionarIngrediente', $event)
+          " />
       </li>
     </ul>
   </article>

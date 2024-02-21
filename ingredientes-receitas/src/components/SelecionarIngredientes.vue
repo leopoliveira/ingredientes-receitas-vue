@@ -15,6 +15,7 @@ export default {
   components: {
     CardCategoria,
   },
+  emits: ["adicionarIngrediente"],
 };
 </script>
 
@@ -29,7 +30,11 @@ export default {
       <li
         v-for="(categoria, index) in listaCategorias"
         :key="index">
-        <CardCategoria :categoria="categoria" />
+        <CardCategoria
+          :categoria="categoria"
+          @adicionar-ingrediente="
+            $emit('adicionarIngrediente', $event)
+          " />
       </li>
     </ul>
     <p class="paragrafo dica">

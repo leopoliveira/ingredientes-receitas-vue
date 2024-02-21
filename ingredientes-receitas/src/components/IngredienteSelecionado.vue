@@ -17,13 +17,23 @@ export default {
       selecionado: false,
     };
   },
+  methods: {
+    aoclicar() {
+      this.selecionado = !this.selecionado;
+
+      if (this.selecionado) {
+        this.$emit("adicionarIngrediente", this.ingrediente);
+      }
+    },
+  },
+  emits: ["adicionarIngrediente"],
 };
 </script>
 
 <template>
   <button
     class="ingrediente"
-    @click="selecionado = !selecionado"
+    @click="aoclicar"
     :aria-pressed="selecionado">
     <Tag
       :texto="ingrediente"
