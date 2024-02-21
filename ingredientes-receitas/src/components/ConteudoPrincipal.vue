@@ -13,8 +13,18 @@ export default {
     SuaLista,
   },
   methods: {
-    adicionarIngredientes(ingrediente: string) {
+    adicionarIngrediente(ingrediente: string) {
+      if (this.ingredientes.includes(ingrediente)) {
+        return;
+      }
       this.ingredientes.push(ingrediente);
+    },
+    removerIngrediente(ingrediente: string) {
+      const index = this.ingredientes.indexOf(ingrediente);
+      if (index === -1) {
+        return;
+      }
+      this.ingredientes.splice(index, 1);
     },
   },
 };
@@ -24,7 +34,8 @@ export default {
   <main class="conteudo-principal">
     <SuaLista :ingredientes="ingredientes" />
     <SelecionarIngredientes
-      @adicionar-ingrediente="adicionarIngredientes($event)" />
+      @adicionar-ingrediente="adicionarIngrediente($event)"
+      @remover-ingrediente="removerIngrediente($event)" />
   </main>
 </template>
 

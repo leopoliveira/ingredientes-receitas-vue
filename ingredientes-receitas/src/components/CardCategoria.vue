@@ -13,7 +13,7 @@ export default {
   components: {
     IngredienteSelecionado,
   },
-  emits: ["adicionarIngrediente"],
+  emits: ["adicionarIngrediente", "removerIngrediente"],
 };
 </script>
 
@@ -38,6 +38,9 @@ export default {
           :ingrediente="ingrediente"
           @adicionar-ingrediente="
             $emit('adicionarIngrediente', $event)
+          "
+          @remover-ingrediente="
+            $emit('removerIngrediente', $event)
           " />
       </li>
     </ul>
