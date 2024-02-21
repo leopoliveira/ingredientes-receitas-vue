@@ -20,11 +20,9 @@ export default {
       this.ingredientes.push(ingrediente);
     },
     removerIngrediente(ingrediente: string) {
-      const index = this.ingredientes.indexOf(ingrediente);
-      if (index === -1) {
-        return;
-      }
-      this.ingredientes.splice(index, 1);
+      this.ingredientes = this.ingredientes.filter(
+        (itemDaLista) => ingrediente != itemDaLista
+      );
     },
   },
 };
