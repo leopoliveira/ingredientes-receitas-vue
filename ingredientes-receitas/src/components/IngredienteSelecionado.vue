@@ -1,5 +1,4 @@
 <script lang="ts">
-import { ref } from "vue";
 import Tag from "./Tag.vue";
 
 export default {
