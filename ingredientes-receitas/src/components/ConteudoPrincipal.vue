@@ -1,16 +1,21 @@
 <script lang="ts">
+import MostrarReceitas from "./MostrarReceitas.vue";
 import SelecionarIngredientes from "./SelecionarIngredientes.vue";
 import SuaLista from "./SuaLista.vue";
+
+type Page = "SelecionarIngredientes" | "MostrarReceitas";
 
 export default {
   data() {
     return {
       ingredientes: [] as string[],
+      paginaAtual: "SelecionarIngredientes" as Page,
     };
   },
   components: {
     SelecionarIngredientes,
     SuaLista,
+    MostrarReceitas,
   },
   methods: {
     adicionarIngrediente(ingrediente: string) {
@@ -32,8 +37,10 @@ export default {
   <main class="conteudo-principal">
     <SuaLista :ingredientes="ingredientes" />
     <SelecionarIngredientes
+      v-if="paginaAtual === 'SelecionarIngredientes'"
       @adicionar-ingrediente="adicionarIngrediente($event)"
       @remover-ingrediente="removerIngrediente($event)" />
+    <MostrarReceitas v-else-if="paginaAtual === 'MostrarReceitas'" />
   </main>
 </template>
 
