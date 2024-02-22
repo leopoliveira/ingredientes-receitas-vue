@@ -2,7 +2,6 @@
 import SelecionarIngredientes from "./SelecionarIngredientes.vue";
 import SuaLista from "./SuaLista.vue";
 import BotaoPrincipal from "./BotaoPrincipal.vue";
-import Footer from "./Footer.vue";
 
 export default {
   data() {
@@ -15,7 +14,6 @@ export default {
     SelecionarIngredientes,
     SuaLista,
     BotaoPrincipal,
-    Footer,
   },
   methods: {
     adicionarIngrediente(ingrediente: string) {
@@ -42,8 +40,6 @@ export default {
 
     <BotaoPrincipal :texto="textoBtnPrincipal" />
   </main>
-
-  <Footer />
 </template>
 
 <style scoped>
