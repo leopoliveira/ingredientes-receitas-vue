@@ -46,7 +46,8 @@ export default {
       @buscar-receitas="navegar('MostrarReceitas')" />
     <MostrarReceitas
       v-else-if="paginaAtual === 'MostrarReceitas'"
-      @editar-receitas="navegar('SelecionarIngredientes')" />
+      @editar-receitas="navegar('SelecionarIngredientes')"
+      :ingredientes="ingredientes" />
   </main>
 </template>
 

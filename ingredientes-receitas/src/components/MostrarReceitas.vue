@@ -3,6 +3,7 @@ import type { Receita } from "../interfaces/Receita";
 import { obterReceitas } from "../data/receitas";
 import BotaoPrincipal from "./BotaoPrincipal.vue";
 import CardReceita from "./CardReceita.vue";
+import type { PropType } from "vue";
 
 export default {
   data() {
@@ -10,8 +11,14 @@ export default {
       receitasEncontradas: [] as Receita[],
     };
   },
-  async created() {
-    this.receitasEncontradas = await obterReceitas();
+  props: {
+    ingredientes: {
+      type: Array as PropType<string[]>,
+      required: true,
+    },
+  },
+  async mounted() {
+    this.receitasEncontradas = await obterReceitas(this.ingredientes);
   },
   components: {
     BotaoPrincipal,
