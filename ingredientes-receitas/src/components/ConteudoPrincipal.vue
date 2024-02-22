@@ -1,19 +1,16 @@
 <script lang="ts">
 import SelecionarIngredientes from "./SelecionarIngredientes.vue";
 import SuaLista from "./SuaLista.vue";
-import BotaoPrincipal from "./BotaoPrincipal.vue";
 
 export default {
   data() {
     return {
       ingredientes: [] as string[],
-      textoBtnPrincipal: "Buscar receitas!" as string,
     };
   },
   components: {
     SelecionarIngredientes,
     SuaLista,
-    BotaoPrincipal,
   },
   methods: {
     adicionarIngrediente(ingrediente: string) {
@@ -37,8 +34,6 @@ export default {
     <SelecionarIngredientes
       @adicionar-ingrediente="adicionarIngrediente($event)"
       @remover-ingrediente="removerIngrediente($event)" />
-
-    <BotaoPrincipal :texto="textoBtnPrincipal" />
   </main>
 </template>
 

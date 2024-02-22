@@ -2,11 +2,13 @@
 import type { Categoria } from "../interfaces/Categoria";
 import { obterCategorias } from "../data/receitas";
 import CardCategoria from "../components/CardCategoria.vue";
+import BotaoPrincipal from "../components/BotaoPrincipal.vue";
 
 export default {
   data() {
     return {
       listaCategorias: [] as Categoria[],
+      textoBtnPrincipal: "Buscar receitas!" as string,
     };
   },
   async created() {
@@ -14,6 +16,7 @@ export default {
   },
   components: {
     CardCategoria,
+    BotaoPrincipal,
   },
   emits: ["adicionarIngrediente", "removerIngrediente"],
 };
@@ -43,6 +46,8 @@ export default {
     <p class="paragrafo dica">
       *Atenção: consideramos que você tem em casa sal, pimenta e água.
     </p>
+
+    <BotaoPrincipal :texto="textoBtnPrincipal" />
   </section>
 </template>
 
