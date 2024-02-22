@@ -5,20 +5,36 @@ import BotaoPrincipal from "./BotaoPrincipal.vue";
 import CardReceita from "./CardReceita.vue";
 import type { PropType } from "vue";
 
+function filtreReceitasPorIngredientes(
+  receitasIngredientes: string[],
+  ingredientes: string[]
+): boolean {
+  return receitasIngredientes.every((ing) => {
+    return ingredientes.includes(ing);
+  });
+}
+
 export default {
-  data() {
-    return {
-      receitasEncontradas: [] as Receita[],
-    };
-  },
   props: {
     ingredientes: {
       type: Array as PropType<string[]>,
       required: true,
     },
   },
-  async mounted() {
-    this.receitasEncontradas = await obterReceitas(this.ingredientes);
+  data() {
+    return {
+      receitasEncontradas: [] as Receita[],
+    };
+  },
+  async created() {
+    const receitas = await obterReceitas();
+
+    this.receitasEncontradas = receitas.filter((rec) => {
+      return filtreReceitasPorIngredientes(
+        rec.ingredientes,
+        this.ingredientes
+      );
+    });
   },
   components: {
     BotaoPrincipal,
