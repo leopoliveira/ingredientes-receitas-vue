@@ -44,7 +44,9 @@ export default {
       @adicionar-ingrediente="adicionarIngrediente($event)"
       @remover-ingrediente="removerIngrediente($event)"
       @buscar-receitas="navegar('MostrarReceitas')" />
-    <MostrarReceitas v-else-if="paginaAtual === 'MostrarReceitas'" />
+    <MostrarReceitas
+      v-else-if="paginaAtual === 'MostrarReceitas'"
+      @editar-receitas="navegar('SelecionarIngredientes')" />
   </main>
 </template>
 
