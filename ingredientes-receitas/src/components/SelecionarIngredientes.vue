@@ -5,6 +5,7 @@ import CardCategoria from "../components/CardCategoria.vue";
 import BotaoPrincipal from "../components/BotaoPrincipal.vue";
 
 export default {
+  name: "SelecionarIngredientes",
   data() {
     return {
       listaCategorias: [] as Categoria[],
