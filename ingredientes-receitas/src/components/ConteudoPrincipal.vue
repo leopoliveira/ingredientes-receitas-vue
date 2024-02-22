@@ -29,6 +29,9 @@ export default {
         (itemDaLista) => ingrediente != itemDaLista
       );
     },
+    navegar(pagina: Page) {
+      this.paginaAtual = pagina;
+    },
   },
 };
 </script>
@@ -39,7 +42,8 @@ export default {
     <SelecionarIngredientes
       v-if="paginaAtual === 'SelecionarIngredientes'"
       @adicionar-ingrediente="adicionarIngrediente($event)"
-      @remover-ingrediente="removerIngrediente($event)" />
+      @remover-ingrediente="removerIngrediente($event)"
+      @buscar-receitas="navegar('MostrarReceitas')" />
     <MostrarReceitas v-else-if="paginaAtual === 'MostrarReceitas'" />
   </main>
 </template>
